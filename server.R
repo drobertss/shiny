@@ -4,7 +4,7 @@ library(ggplot2)
 library(scales)
 
 # #source("helpers.R")
-#      setwd("C:/Users/Rob/Google Drive/grad_school/STAT_515/FinalProject/")
+
 # # # # # # # print("Reading csv")
 #          f <- file("data/hubway_trips.csv") 
 #          df <- sqldf("select * from f", dbname=tempfile(), file.format = list(header=T, row.names=F)) # Imports data into SQLite then pull to R
