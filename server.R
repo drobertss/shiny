@@ -6,29 +6,29 @@ library(scales)
 # #source("helpers.R")
 
 # # # # # # # print("Reading csv")
-#          f <- file("data/hubway_trips.csv") 
-#          df <- sqldf("select * from f", dbname=tempfile(), file.format = list(header=T, row.names=F)) # Imports data into SQLite then pull to R
-#          df <- subset(df, select = -c(2,3)) #removes hubway id, status and zip code columns from dataframe
+          f <- file("data/hubway_trips.csv") 
+          df <- sqldf("select * from f", dbname=tempfile(), file.format = list(header=T, row.names=F)) # Imports data into SQLite then pull to R
+          df <- subset(df, select = -c(2,3)) #removes hubway id, status and zip code columns from dataframe
 # # # # # # # #  print("File successfuly read")
 # # # # # # # #  # # splits start date column to separate cols for time
 # # # # # # # # # 
 #  # # # #  #  #print("Editing start time/date columns")
-#          df$start_time <- sapply(df$start_date, FUN = function(x) {strsplit(x, split=' ')[[1]][2]}) 
-#          df$start_date <- sapply(df$start_date, FUN = function(x) {strsplit(x, split=' ')[[1]][1]}) 
+          df$start_time <- sapply(df$start_date, FUN = function(x) {strsplit(x, split=' ')[[1]][2]}) 
+          df$start_date <- sapply(df$start_date, FUN = function(x) {strsplit(x, split=' ')[[1]][1]}) 
 # # # # # #  #  # # do same for end date
 # # # # # # # # # # print("Editing end time/date columns")
 # # # # # # # # #  
-#          df$end_time <- sapply(df$end_date, FUN = function(x) {strsplit(x, split=' ')[[1]][2]}) 
-#         df$end_date <- sapply(df$end_date, FUN = function(x) {strsplit(x, split=' ')[[1]][1]}) 
+          df$end_time <- sapply(df$end_date, FUN = function(x) {strsplit(x, split=' ')[[1]][2]}) 
+         df$end_date <- sapply(df$end_date, FUN = function(x) {strsplit(x, split=' ')[[1]][1]}) 
 #  # #  # # #  # # year the bike was rented (taken from start_date)
 # # # # # # # # print("Editing year columns")
 # # # # # # # # #  
-#        df$year <- sapply(df$start_date,FUN = function(x){strsplit(x, split='/')})[[1]][3]
+        df$year <- sapply(df$start_date,FUN = function(x){strsplit(x, split='/')})[[1]][3]
 # # # # # # # #  # # column with age of renter
 # # # # # # # # print("Editing age time/date columns")
 # # # # # # # # #  
-#          df$age <- as.numeric(df$year) - as.numeric(df$birth_date)
-#         df$weekday <- weekdays(df$start_date)
+          df$age <- as.numeric(df$year) - as.numeric(df$birth_date)
+         df$weekday <- weekdays(df$start_date)
 # # #      
 # # # print("Everything done")
 # # # #df3 <- df
