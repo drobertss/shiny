@@ -1,4 +1,4 @@
-# shiny
+# stat 515 shiny final project
 ## Run Instructions 
 Download dataset hubway_trips.csv from http://hubwaydatachallenge.org/trip-history-data/
 
